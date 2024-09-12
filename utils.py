@@ -45,3 +45,15 @@ def nearest_neighbor(target_vector, vectors):
     # Hint: For this lab, you can just use a for loop to iterate through vectors.
     '''
     ### YOUR CODE HERE
+    # Cosine similarity ranges from -1 to 1
+    max_similarity = -1  
+    nearest_index = -1
+
+    for i, vector in enumerate(vectors):
+        # Calculate cosine similarity
+        similarity = cosine_similarity(target_vector, vector)
+        if similarity > max_similarity:
+            max_similarity = similarity
+            nearest_index = i
+
+    return nearest_index
